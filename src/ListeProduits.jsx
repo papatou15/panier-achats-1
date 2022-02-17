@@ -2,7 +2,7 @@ import './ListeProduits.scss';
 import Produit from './Produit';
 import lesProduits from './data/produits.json';
 
-export default function ListeProduits() {
+export default function ListeProduits(props) {
     // Exemple avec la fonction map() 
     let notes = [59.566, 78.23, 85.258, 35.9954];
     // Pour transformer ce tableau dans un tableau qu icontient les notes arrondies à un eplace décimale : 
@@ -23,7 +23,7 @@ export default function ListeProduits() {
             <h2>Nos produits</h2>
             <div className="produits">
                 {
-                    lesProduits.map(p => <Produit key={p.id} nom={p.nom} prix={p.prix} pid={p.id} />)
+                    lesProduits.map(p => <Produit panier={props.panier} setPanier={props.setPanier} key={p.id} nom={p.nom} prix={p.prix} pid={p.id} />)
                 }
             </div>
         </section>
