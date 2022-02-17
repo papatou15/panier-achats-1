@@ -8,7 +8,8 @@ function App() {
   const etatPanier = useState({});
 
   const panier = etatPanier[0];
-  const setPanier = etatPanier[1];
+  // const setPanier = etatPanier[1];
+  // const [panier, setPanier] = useState({});
 
   console.log("L'état panier: ", panier)
 
@@ -33,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <Entete panier={panier}/>
-      <ListeProduits panier={panier} setPanier={setPanier}/>
+      <ListeProduits panier={panier} etatPanier={etatPanier}/>
       <div>
         <span>Nombre de clics: <i>{compteur}</i></span>
         <button onClick={() => setCompteur(compteur+1)}>Cliquez-moi</button>
