@@ -26,10 +26,18 @@ function App() {
     //   qte: 10
     // }
   // }
+
+// let compteurClic = 0;
+  const [compteur, setCompteur] = useState(0);
+
   return (
     <div className="App">
       <Entete panier={panier}/>
       <ListeProduits panier={panier} setPanier={setPanier}/>
+      <div>
+        <span>Nombre de clics: <i>{compteur}</i></span>
+        <button onClick={() => setCompteur(compteur+1)}>Cliquez-moi</button>
+      </div>
       <PiedPage />
     </div>
   );
